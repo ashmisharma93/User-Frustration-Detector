@@ -51,6 +51,7 @@ The notebook covers:
  - Evaluation
 
 3. Run the Streamlit App
-```cd User_frustration_app
+```
+cd User_frustration_app
 streamlit run app.py
 ```
