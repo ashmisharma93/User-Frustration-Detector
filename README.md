@@ -31,10 +31,11 @@ User Frustration Detector/
 │   ├── app.py                # Streamlit app
 │   └── saved_model/          # Model used by the app
 ├── data/                      # Review dataset (CSV)
-├── model.h5                  # Saved Keras-compatible model
-├── User_Frustration_Project(2).ipynb  # Jupyter notebook
-├── requirements.txt
 └── README.md
+├── User_Frustration_Project(2).ipynb  # Jupyter notebook
+├── model.h5                  # Saved Keras-compatible model
+├── requirements.txt
+
 ```
 ## 🚀 How to Run
 
