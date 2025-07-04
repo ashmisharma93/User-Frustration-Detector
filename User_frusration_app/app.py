@@ -107,22 +107,6 @@ if uploaded_file is not None:
             df['Frustration_Prediction'] = df[review_column].apply(predict_label_safe)
             df['Highlighted_Review'] = df[review_column].apply(highlight_triggers)
 
-        # ======================= CHARTS ============================
-        st.success("✅ Predictions complete!")
-        st.markdown("### 📊 Frustration Distribution")
-        label_counts = df['Frustration_Prediction'].value_counts().reset_index()
-        label_counts.columns = ['Frustration_Prediction', 'Count']
-
-        fig_pie = px.pie(label_counts, names='Frustration_Prediction', values='Count',
-                         title='Frustration Breakdown', color_discrete_sequence=px.colors.qualitative.Set2)
-        st.plotly_chart(fig_pie, use_container_width=True)
-
-        st.markdown("### 📈 Frustration Frequency Bar Chart")
-        fig_bar = px.bar(label_counts, x='Frustration_Prediction', y='Count',
-                         color='Frustration_Prediction', color_discrete_sequence=px.colors.qualitative.Set2,
-                         text='Count')
-        st.plotly_chart(fig_bar, use_container_width=True)
-
         # ======================= HIGHLIGHTED REVIEWS ============================
         st.markdown("### 🔍 Highlighted Reviews with Predictions")
         for _, row in df.head(10).iterrows():
